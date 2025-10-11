@@ -1,0 +1,786 @@
+class ==> 1
+  Angular is a framework designed for SPA and PWA's.
+  2010, Google brought a framework Angular JS
+  2012, Microsoft implemented TypeScript, Google incorporated TS into angular architecture and released Angular / Angular2 / Angular+
+
+  Framework(inbuilt developer platform) vs Library (predefined code for a specific use)
+
+  Angular vs React
+  -Framework              -UI based library
+  -Two Way data binding   -One way data binding
+  -Command Line Interface -manual
+
+  Syllabus ==>
+  Basics
+  data-binding
+  directives
+  pipes
+  component communication
+  modules
+  services
+  httpClient
+  routing
+  forms
+  lifecycle methods
+  state management (rxJS)
+
+  NPM (Node Package Manager)
+  npm is used to manage packages into your project (installing / uninstalling different pakages).
+  
+  >node -v
+  v22.16.0
+
+  >npm -v
+  10.9.2
+
+  >git -v
+  git version 2.46.0.windows.1
+class ==> 2
+  JavaScript Revision.
+  let - block scope
+  const - block scope
+  var - function scope
+
+  A function returning a function is called call back function.
+
+  JS variables
+  number
+  string
+  BigInt
+  symbol
+  boolean
+  null
+  undefined
+
+  5 + '4' = 54
+  5 - '4' = 1
+
+  operators:
+  ?:
+  ++
+  --
+
+  loops, control statements
+  arr = [2,4,6,8]
+  (4) [2, 4, 6, 8]
+  for(let i in arr)
+  {
+        console.log(i)
+  }
+  0
+  1
+  2
+  3
+  undefined
+  for(let i of arr)
+  {
+        console.log(i)
+  }
+  2
+  4
+  6
+  8
+  undefined
+  arr.forEach((i)=>{
+      console.log(i);
+  });
+  2
+  4
+  6
+  8
+  undefined
+  const p = arr.map((i)=>{
+      console.log(i);
+      return i+3;
+  })
+  2
+  4
+  6
+  8
+  undefined
+  p
+  (4) [5, 7, 9, 11]
+  const p = arr.filter((i)=>{
+      console.log(i);
+      return i%3==0;
+  })
+  2
+  4
+  6
+  8
+  undefined
+  p
+  [6]
+  const p = arr.map((i)=>{
+      console.log(i);
+      return i%3==0;
+  })
+  2
+  4
+  6
+  8
+  undefined
+  p
+  (4) [false, false, true, false]
+  //lexical scoping
+  let obj = {
+      name:"raj",
+      age:21
+  }
+  undefined
+  function print(a,b)
+  {
+      console.log(this.name,this.age,a,b);
+  }
+  undefined
+  print(obj,6,7);
+  undefined {name: 'raj', age: 21}age: 21name: "raj"[[Prototype]]: Object 6
+  undefined
+  print.call(obj,4,5)
+  raj 21 4 5
+  undefined
+  print.apply(obj,[3,4])
+  raj 21 3 4
+
+  let r = print.bind(obj);
+  r();
+  raj 21 undefined undefined
+
+  fetch('https://dummyjson.com/recipes')
+  .then(res=>res.json())
+  .then(data=>console.log(data))
+
+  async function fetchData()
+  {
+      const res = await fetch('https://dummyjson.com/recipes')
+      const data = await res.json()
+      console.log(data);
+  }
+  undefined
+  fetchData()
+
+  class Iphone{}
+  undefined
+  console.log(typeof Iphone)
+  function
+
+  ES6 module system is used in angular
+
+class ==> 3       TypeScript
+         A brief history of typescript
+  in 2010, anders hejlsberg (the creator of typescript) started working on typescript at
+  Microsoft and in 2012 the first version of typescript was released to the public (typescript
+  0.8). Although the release of typescript was praised by many people around the world,
+  due to the lack of support by major ides, it was not majorly adopted by the JavaScript
+  community.
+  The first version of typescript (typescript 0.8) released to the public October 2012.
+  The latest version of typescript (typescript 3.0) was released to the public in July 2018.
+
+  Why typescript?
+  Typescript is open source.
+  Typescript simplifies JavaScript code, making it easier to read and debug.
+  Typescript is a superset of ES3, ES5, and ES6.
+  Typescript will save developers time.
+  Typescript code can be compiled as per ES5 and ES6 standards to support the latest browser.
+  Typescript can help us to avoid painful bugs that developers commonly run into when writing JavaScript by
+  type checking the code.
+  Typescript is nothing but JavaScript with some additional features.
+  
+  Typescript features
+  Cross-platform: typescript runs on any platform that JavaScript runs on. The typescript compiler can be installed on any operating system such as windows, mac os and Linux.
+  Object oriented language: typescript provides powerful features such as classes, interfaces, and modules. You can write pure object-oriented code for client-side as well as server-side development.
+  Static type-checking: typescript uses static typing. This is done using type annotations. It helps type checking at compile time. Thus, you can find errors while typing the code without running your script each time. Additionally, using the type inference mechanism, if a variable is declared without a type, it will be inferred based on its value.
+  Optional static typing: typescript also allows optional static typing if you would rather use JavaScript's dynamic typing.
+  DOM manipulation: just like JavaScript, typescript can be used to manipulate the DOM for adding or removing
+  elements.
+  ES 6 features: typescript includes most features of planned ECMAScript 2015 (ES 6, 7) such as class, interface, arrow functions etc.
+
+  Setup Development Environment
+  Install typescript using node.Js package manager (npm).
+  Install the typescript plug-in in your IDE (integrated development environment).
+  Typescript Playground
+  Typescript provides an online playground https://www.Typescriptlang.Org/play to write and test
+  your code on the fly without the need to download or install anything.
+   npm install -g typescript
+   tsc -v
+   >npx tsc --init
+  Version blah.blah.blah
+  
+  TypeScript data types:
+  TypeScript follows two methods for data type declarations
+  1.Types Annotations: It means we declare data type followed by :, after the variable
+  2.Type Interference: It means typescript can guess the data type based on initial value
+
+  TypeScript Data Type
+  • Number
+  • String
+  • Boolean
+  • Array
+  • Tuple
+  • Enum
+  • Union
+  • Any
+  • Void
+  • Never
+  Variable Declaration
+  Variables can be declared using :
+  var, let, const
+  TypeScript Data Type - NUMBER
+  TypeScript Data Type - STRING
+  TypeScript Data Type - BOOLEAN
+  Note that, boolean with an upper case B is different from boolean with a lower case b. Upper case boolean is an object type whereas lower case boolean is a primitive type. It is always recommended to use boolean, the primitive type in your programs. This is because, while JavaScript coerces an object to its primitive type, the typescript type system does not. Typescript treats it like an object type.
+  TypeScript Data Type - Array
+  1. Using square brackets. This method is similar to how you would declare arrays
+  in JavaScript.
+  2. Using a generic array type, array<element type>.
+  Of course, you can always initialize an array like shown below, but you will not get
+  the advantage of typescript's type system.
+  Example: Multi Type Array
+  let values: (string | number) [] = ['Apple', 2, 'Orange', 3, 4, 'Banana'];
+  // or
+  let values: Array<string number> = ['Apple', 2, 'Orange', 3, 4, 'Banana'];
+  Example: Array Declaration and Initialization
+  let fruits: Array<string>;
+  fruits = ['Apple', 'Orange', 'Banana'];
+  let ids: Array<number>;
+  ids = [23, 34, 100, 124, 44];
+  TYPESCRIPT DATA TYPE - TUPLE
+  Typescript introduced a new data type called tuple. There are other data types such as number, string, boolean etc.
+  In typescript which only store a value of that particular data type. Tuple is a new data type which includes two set of
+  values of different data types.
+  Add Elements into Tuple
+  You can declare an array of tuple also.
+  TypeScript Data Type - Enum
+  Enums or enumerations are a new data type supported in typescript. Most object-oriented
+  languages like java and C# use enums. This is now available in typescript too.
+  There are three types of enums:
+  Numeric enum
+  String enum
+  Heterogeneous enum
+  Numeric Enum
+  Numeric enums are number-based enums i.e. they store string values as numbers.
+  Numeric enums can include members with computed numeric value. The value of an enum member can
+  be either a constant or computed. The following enum includes members with computed values.
+  When the enum includes computed and constant members, then uninitiated enum members either
+  must come first or must come after other initialized members with numeric constants.
+  STRING ENUM
+  String enums are similar to numeric enums, except that the enum values are initialized with string values
+  rather than numeric values.
+  The difference between numeric and string enums is that numeric enum values are auto-incremented,
+  while string enum values need to be individually initialized.
+  HETEROGENEOUS ENUM
+  Heterogeneous enums are enums that contain both string and numeric values.
+  TYPESCRIPT - UNION
+  Typescript allows us to use more than one data type for a variable or a function parameter. This is called
+  union type.
+  TYPESCRIPT DATA TYPE - ANY
+  Typescript has type-checking and compile-time checks. However, we do not always have prior knowledge
+  about the type of some variables, especially when there are user-entered values from third party libraries. In
+  such cases, we need a provision that can deal with dynamic content.
+  TYPESCRIPT DATA TYPE - VOID
+  Similar to languages like java, void is used where there is no data type. For example, in return type of
+  functions that do not return any value.
+  * There is no meaning to assign void to a variable, as only null or undefined is
+  assignable to void.
+  TYPESCRIPT DATA TYPE - NEVER
+  Typescript introduced a new type never, which indicates the values that will never occur.
+  The never type is used when you are sure that something is never going to occur. For example, you write a
+  function which will not return to its end point or always throws an exception.
+  DIFFERENCE BETWEEN NEVER AND VOID
+  The void type can have undefined or null as a value where as never cannot have any value.
+  In typescript, a function that does not return a value, actually returns undefined.
+  TYPE INFERENCE IN TYPESCRIPT
+  It is not mandatory to annotate type. TypeScript infers types of variables when there is no explicit information
+  available in the form of type annotations.
+  Types are inferred by TypeScript compiler when:
+  • Variables are initialized
+  • Default values are set for parameters
+  • Function return types are determined
+  For example:
+  The above code shows an error because while inferring types, typescript inferred the type of variable a as
+  string and variable b as number. When we try to assign b to a, the compiler complains saying a number
+  type cannot be assigned to a string type.
+  TYPE INFERENCE IN COMPLEX OBJECTS
+  For example:
+  In the above example, we have an array that has the values 10, null, 30, and, 40 . typescript looks for the most
+  common type to infer the type of the object. In this case, it picks the one that's is compatible with all types i.e.
+  Number, as well as null.
+  Consider another example:
+  Here, the array has values of type number as well as type string. In such cases, the typescript compiler looks
+  for the most common type to infer the type of the object but does not find any super type that can encompass
+  all the types present in the array. In such cases, the compiler treats the type as a union of all types present in
+  the array. Here, the type would be (string | number) which means that the array can hold either string values or
+  number values. This is called union type.
+  TYPE ASSERTION IN TYPESCRIPT
+  There are two ways to do type assertion in typescript:
+  • Using the angular bracket <> syntax.
+  • Using as keyword
+  Type assertion allows you to set the type of a value and tell the compiler not to infer it. This is
+  when you, as a programmer, might have a better understanding of the type of a variable than
+  what Typescript can infer on its own. Such a situation can occur when you might be porting
+  over code from JavaScript and you may know a more accurate type of the variable than what is
+  currently assigned. It is similar to type casting in other languages like C# and Java. However,
+  unlike C# and Java, there is no runtime effect of type assertion in Typescript. It is merely a
+  way to let the Typescript compiler know the type of a variable.
+  TYPESCRIPT - FUNCTION
+  Functions can also include parameter types and return type.
+  Parameters are values or arguments passed to a function. In Typescript, the compiler expects a function
+  to receive the exact number and type of arguments as defined in the function signature. If the function
+  expects three parameters, the compiler checks that the user has passed values for all three parameters
+  i.e. it checks for exact matches.
+  OPTIONAL PARAMETERS IN FUNCTIONS
+  All optional parameters must follow required parameters and should be at the end.
+  In the above example, the second parameter name is marked as optional with a question mark appended at
+  the end. Hence, the function greet() accepts either 1 or 2 parameters and returns a greeting string. If we do
+  not specify the second parameter then its value will be undefined.
+  TYPESCRIPT - FUNCTION OVERLOADING
+  Typescript provides the concept of function overloading. You can have multiple functions with the
+  same name but different parameter types and return type. However, the number of parameters
+  should be the same.
+  Function overloading with different number of parameters and types with same name is not
+  supported.
+  TYPESCRIPT - REST PARAMETERS
+  Remember, rest parameters must come last in the function definition, otherwise the Typescript compiler will show an
+  error. The following is not valid.
+  Typescript introduced rest parameters to accommodate n number of parameters easily.
+  When the number of parameters that a function will receive is not known or can vary, we can use rest
+  parameters. In JavaScript, this is achieved with the "arguments" variable. However, with typescript, we can use
+  the rest parameter denoted by ellipsis ....
+  TYPESCRIPT - INTERFACE
+  Interface is a structure that defines the contract in your application. It defines the syntax for classes to follow.
+  Classes that are derived from an interface must follow the structure provided by their interface.
+  The typescript compiler does not convert interface to JavaScript. It uses interface for type checking. This is
+  also known as "duck typing" or "structural subtyping".
+  An interface is defined with the keyword interface and it can include properties and method declarations using
+  a function or an arrow function.
+  INTERFACE AS TYPE
+  Interface in typescript can be used to define a type and also to implement it in the class.
+  In the above example, an interface key pair includes two properties key and value. A variable kv1 is declared as
+  key pair type. So, it must follow the same structure as key pair. It means only an object with properties key of
+  number type and value of string type can be assigned to a variable kv1. The typescript compiler will show an
+  error if there is any change in the name of the properties or the data type is different than key pair. Another
+  variable kv2 is also declared as key pair type but the assigned value is Val instead of value, so this will cause an
+  error. In the same way, kv3 assigns a number to the value property, so the compiler will show an error. Thus,
+  typescript uses an interface to ensure the proper structure of an object.
+  INTERFACE AS FUNCTION TYPE
+  In the example, an interface KeyValueProcessor includes a method signature. This defines the function type.
+  Now, we can define a variable of type KeyValueProcessor which can only point to functions with the same
+  signature as defined in the KeyValueProcessor interface. So, addKeyValue or updateKeyValue function is
+  assigned to kvp. So, kvp can be called like a function.
+  INTERFACE FOR ARRAY TYPE
+  An interface can also define the type of an array where you can define the type of index as well as values.
+  In the above example, interface numlist defines a type of array with index as number and value as number
+  type. In the same way, istringlist defines a string array with index as string and value as string.
+  OPTIONAL PROPERTY
+  Sometimes, we may declare an interface with excess properties but may not expect all objects to define all
+  the given interface properties. We can have optional properties, marked with a "?". in such cases, objects of
+  the interface may or may not define these properties.
+  In the above example, empDept is marked with ?, so objects of IEmployee may or may not include this property.
+  READ ONLY PROPERTIES
+  Typescript provides a way to mark a property as read only. This means that once a property is assigned a
+  value, it cannot be changed!
+  In the above example, the SSN property is read only. We define the personobj object of type citizen and
+  assign values to the two interface properties. Next, we try to change the values assigned to both the
+  properties-name and SSN. The typescript compiler will show an error when we try to change the read only
+  SSN property.
+  EXTENDING INTERFACES
+  Interfaces can extend one or more interfaces. This makes writing interfaces flexible and reusable.
+  In the above example, the iemployee interface extends the iperson interface. So, objects of iemployee must
+  include all the properties and methods of the iperson interface otherwise, the compiler will show an error.
+  IMPLEMENTING AN INTERFACE
+  Similar to languages like java and C#, interfaces in typescript can be implemented with a class. The class
+  implementing the interface needs to strictly conform to the structure of the interface.
+  In the example, the iemployee interface is
+  implemented in the employee class using
+  the implement keyword. The implementing
+  class should strictly define the properties
+  and the function with the same name and
+  data type. If the implementing class does
+  not follow the structure, then the compiler
+  will show an error.
+  Of course, the implementing class can
+  define extra properties and methods, but at
+  least it must define all the members of an
+  interface.
+  TYPESCRIPT - CLASS
+  In object-oriented programming languages like Java and C#, classes are the fundamental entities used to
+  create reusable components. Functionalities are passed down to classes and objects are created from classes.
+  However, until ECMAScript 6 (also known as ECMAScript 2015), this was not the case with JavaScript.
+  JavaScript has been primarily a functional programming language where inheritance is prototype-based.
+  Functions are used to build reusable components. In ECMAScript 6, object-oriented class based approach was
+  introduced. Typescript introduced classes to avail the benefit of object-oriented techniques like encapsulation
+  and abstraction. The class in Typescript is compiled to plain JavaScript functions by the Typescript compiler to
+  work across platforms and browsers.
+  A class can include the following:
+  • Constructor
+  • Properties
+  • Methods
+  It is not necessary for a class to have a constructor.
+  CREATING AN OBJECT OF CLASS
+  An object of the class can be created using the new keyword.
+  Here, we create an object called emp of type employee using let emp = new employee();. The above
+  class does not include any parameterized constructor so we cannot pass values while creating an
+  object. If the class includes a parameterized constructor, then we can pass the values while creating the
+  object.
+  In the example, we pass values to the object to
+  initialize the member variables. When we
+  instantiate a new object, the class constructor is
+  called with the values passed and the member
+  variables empCode and empName are initialized
+  with these values.
+  INHERITANCE
+  Just like object-oriented languages such as java and C#, typescript classes can be extended to create new
+  classes with inheritance, using the keyword extends.
+  In the last example, the employee class extends the person
+  class using extends keyword. This means that the employee
+  class now includes all the members of the person class.
+  The constructor of the employee class initializes its own
+  members as well as the parent class's properties using a
+  special keyword 'super'. The super keyword is used to call
+  the parent constructor and passes the property values.
+  We must call super() method first before assigning
+  values to properties in the constructor of the
+  derived class.
+  Note:
+  A class can implement single or multiple interfaces.
+  In the last example, the employee class implements two interfaces - iperson and iemployee. So, an instance of
+  the employee class can be assigned to a variable of iperson or iemployee type. However, an object of type
+  iemployee cannot call the display() method because iemployee does not include it. You can only use properties
+  and methods specific to the object type.
+  INTERFACE EXTENDS CLASS
+  An interface can also extend a class to represent a type.
+  In the above example, iemployee is an interface that extends the person class. So, we can declare a variable
+  of type iemployee with two properties. So now, we must declare and initialize values at the same time.
+  TYPESCRIPT - ABSTRACT CLASS
+  Typescript allows us to define an abstract
+  class using keyword abstract. Abstract
+  classes are mainly for inheritance where
+  other classes may derive from them. We
+  cannot create an instance of an abstract
+  class.
+  An abstract class typically includes one or
+  more abstract methods or property
+  declarations. The class which extends the
+  abstract class must define all the abstract
+  methods.
+  The following abstract class declares one
+  abstract method find and also includes a
+  normal method display.
+  In the last example, person is an abstract class which
+  includes one property and two methods, one of which
+  is declared as abstract. The find() method is an
+  abstract method and so must be defined in the derived
+  class. The employee class derives from the person
+  class and so it must define the find() method as
+  abstract. The employee class must implement all the
+  abstract methods of the person class, otherwise the
+  compiler will show an error.
+  The class which implements an
+  abstract class must call super() in
+  the constructor.
+  Note:
+  The abstract class can also include an abstract
+  property, as shown below.
+  TYPESCRIPT - DATA MODIFIERS
+  In object-oriented programming, the concept of 'encapsulation' is used to make class members public or
+  private i.e. A class can control the visibility of its data members. This is done using access modifiers.
+  There are three types of access modifiers in typescript: public, private and protected
+  Public
+  By default, all members of a class in Typescript are public. All the public members can be accessed anywhere
+  without any restrictions.
+  In the last example, empcode and empname are declared as public. So, they can be accessible outside of the
+  class using an object of the class.
+  Please notice that there is not any modifier applied before empname, as typescript treats properties and
+  methods as public by default if no modifier is applied to them.
+  private
+  The private access modifier ensures that class members are visible only to that class and are not accessible
+  outside the containing class.
+  In the above example, we have marked the member empcode as private. Hence, when we create an object emp
+  and try to access the emp.Empcode member, it will give an error.
+  protected
+  The protected access modifier is similar to the private access modifier, except that protected members can be
+  accessed using their deriving classes.
+  In the last example, we have a class employee with
+  two members, public empname and protected
+  property empcode. We create a subclass
+  salesemployee that extends from the parent class
+  employee. If we try to access the protected member
+  from outside the class, as emp.Empcode, we get
+  the following compilation error:
+  Error ts2445: property 'empcode' is protected and
+  only accessible within class 'employee' and its
+  subclasses.
+  In addition to the access modifiers, typescript
+  provides two more keywords: read-only and static.
+  TYPESCRIPT - READONLY
+  Typescript introduced the keyword read-only, which makes a property as read-only in the class, type or
+  interface.
+  Prefix read-only is used to make a property as read-only. Read-only members can be accessed outside the
+  class, but their value cannot be changed. Since read-only members cannot be changed outside the class, they
+  either need to be initialized at declaration or initialized inside the class constructor.
+  In the last example, we have the employee class with two properties- empname and empcode. Since empcode is
+  read only, it can be initialized at the time of declaration or in the constructor.
+  If we try to change the value of empcode after the object has been initialized, the compiler shows the following
+  compilation error:
+  Error TS2540: cannot assign to empcode' because it is a constant or a read-only property.
+  An interface can also have read-only member properties.
+  As you can see above, empcode is read-only, so we can assign a value at the time of creating an object but not
+  after wards.
+  In the same way you can use read-only<t> to create a read-only type, as shown below.
+  In the above example, emp1 is declared as read-only<iemployee> and so values cannot be changed once
+  initialized.
+  TYPESCRIPT - STATIC
+  ES6 includes static members and so does typescript. The static members of a class are accessed using the
+  class name and dot notation, without creating an object e.g. <Classname>.<Staticmember>.
+  The static members can be defined by using the keyword static. Consider the following example of a class with
+  static property.
+  The above circle class includes a static property pi. This can be accessed using circle.Pi.
+  The following example defines a class with static property and method and how to access it.
+  The above circle class includes a static property and a static method. Inside the static method calculatearea,
+  the static property can be accessed using this keyword or using the class name circle.Pi.
+  Now, consider the following example with static and non-static members.
+  As you can see, static and non-static fields with the same name can exists without any error. The static field
+  will be accessed using dot notation and the non-static field can be accessed using an object.
+  TYPESCRIPT - MODULE
+  The typescript code we write is in the global scope by default. If we have multiple files in a project, the
+  variables, functions, etc. Written in one file are accessible in all the other files.
+  For example, consider the following Typescript files: file1.ts and file2.ts
+  In file1.Ts, we used the keyword export before the variable. Now, accessing a variable in file2.Ts will
+  give an error. This is because greeting is no longer in the global scope. In order to access greeting in
+  file2.Ts, we must import the file1 module into file2 using the import keyword.
+  Let's learn export and import in detail.
+  Export
+  A module can be defined in a separate .ts file which can contain functions, variables, interfaces and classes. Use
+  the prefix export with all the definitions you want to include in a module and want to access from other modules.
+  In the above example, employee.Ts is a module which contains two variables and a class definition. The age
+  variable and the employee class are prefixed with the export keyword, whereas companyname variable is not.
+  Thus, employee.Ts is a module which exports the age variable and the employee class to be used in other
+  modules by importing the employee module using the import keyword. The companyname variable cannot be
+  accessed outside this employee module, as it is not exported.
+  IMPORT
+  A module can be used in another module using an import statement.
+  Let's see different ways of importing a module export.
+  * Single export from a Module
+  * Entire Module into a Variable
+  * Renaming an Export from a Module
+  Compiling a Typescript Module
+  We cannot use typescript modules directly in our application. We need to use the JavaScript for typescript
+  modules. To get the JavaScript files for the typescript modules, we need to compile modules using typescript
+  compiler.
+  Compilation of a module depends on the target environment you are aiming for. The typescript compiler
+  generates the JavaScript code based on the module target option specified during compilation.
+  Use the following command to compile a typescript module and generate the JavaScript code.
+  Tsc --module <target> <file path>
+  TYPESCRIPT - NAMESPACE
+  The namespace is used for logical grouping of functionalities. A namespace can include interfaces, classes,
+  functions and variables to support a single or a group of related functionalities.
+  A namespace can be created using the namespace keyword followed by the namespace name. All the
+  interfaces, classes etc. Can be defined in the curly brackets { }.
+  Consider the following example of different string functions in the stringutilities namespace.
+  The above StringUtility.ts file includes the namespace StringUtility which includes two simple string functions.
+  The StringUtility namespace makes a logical grouping of the important string functions for our application.
+  By default, namespace components cannot be used in other modules or namespaces. You must export each
+  component to make it accessible outside, using the export keyword as shown below.
+  Now, we can use the stringutility namespace elsewhere. The following JavaScript code will be
+  generated for the above namespace.
+  As you can see, the above generated JavaScript code for the namespace uses the IIFE pattern to
+  stop polluting the global scope.
+  Let's use the above stringutility namespace in the employee module, as shown below.
+  In order to use namespace components at other places, first we need to include the namespace using the triple
+  slash reference syntax /// <reference path="path to namespace file" />. after including the namespace file using
+  the reference tag, we can access all the functionalities using the namespace. Above, we used the tocapital()
+  function like this: stringutility.Tocapital()
+  TYPESCRIPT - GENERIC
+  When writing programs, one of the most important aspects is to build reusable components. This ensures that
+  the program is flexible as well as scalable in the long-term.
+  Generics offer a way to create reusable components. Generics provide a way to make components work with
+  any data type and not restrict to one data type. So, components can be called or used with a variety of data
+  types. Generics in typescript is almost similar to C# generics.
+  Let's see why we need generics using the following example.
+  In the last example, the getarray() function accepts an array of type any. It creates a new array of type any,
+  concats items to it and returns the new array. Since we have used type any for our arguments, we can pass any
+  type of array to the function. However, this may not be the desired behavior. We may want to add the numbers to
+  number array or the strings to the string array but not numbers to the string array or vice-versa.
+  To solve this, typescript introduced generics. Generics uses the type variable <T>, a special kind of variable that
+  denotes types. The type variable remembers the type that the user provides and works with that particular type
+  only. This is called preserving the type information.
+  The above function can be rewritten as a generic function as below.
+  MULTIPLE TYPE VARIABLES:
+  We can specify multiple type variables with different names as shown below.
+  Generic type can also be used with other non-generic types.
+  METHODS AND PROPERTIES OF GENERIC TYPE
+  When using type variables to create generic components, typescript forces us to use only general methods which
+  are available for every type.
+  In the above example, id.Tostring() and name.Tostring() method calls are correct because the tostring() method
+  is available for all types. However, type specific methods such as tofixed() for number type or touppercase() for
+  string type cannot be called. The compiler will give an error.
+  COMPILE TYPESCRIPT PROJECT
+  As you know, typescript files can be compiled using the tsc <file name>.ts command. It will be tedious to compile
+  multiple .ts files in a large project. So, typescript provides another option to compile all or certain .Ts files of the
+  project.
+  “ tsconfig.json “
+  Typescript supports compiling a whole project at once by including
+  the tsconfig.Json file in the root directory.
+  The tsconfig.Json file is a simple file in JSON format where we can
+  specify various options to tell the compiler how to compile the
+  current project.
+  Consider the following simple project which includes two module
+  files, one namespace file, tsconfig.Json and an html file.
+  The above tsconfig.Json file includes empty curly brackets { } and does not include any options. In this case,
+  the tsc command will consider the default values for the compiler options and compile all the .Ts files in a
+  root directory and its sub-directories.
+  The above tsc command will generate .js files for all .Ts files, as shown below.
+  When using the tsc command to compile files, if a path to tsconfig.json
+  is not specified, the compiler will look for the file in the current
+  directory. If not found in the current directory, it will search for the
+  tsconfig.json file in the parent directory. The compiler will not compile
+  a project if a tsconfig file is absent.
+  D:\typescript>tsc
+  If the tsconfig.json file is not found in the root directory, then you can specify
+  the path using the --project or -p option, as shown below.
+  tsc -p <path to tsconfig.json>
+  Until now, we used an empty tsconfig.Json file and so, the typescript compiler used default settings to compile
+  the typescript files. You can set different compiler options in the "compileroptions" property in the tsconfig.Json
+  file, as shown below.
+  In the above sample tsconfig.Json file, the compileroptions specifies the custom options for the typescript
+  compiler to use when compiling a project.
+  You can also specify specific files to be compiled by using the "files" option. The files property provides a list of all
+  files to be compiled.
+  The above files option includes the file names to be compiled. Here, the compiler will only compile the
+  employee.Ts file.
+  There are two additional properties that can be used to include or omit certain files: include and exclude.
+  All files specified in include will be compiled, except the ones specified in the exclude property.
+  All files specified in the exclude option are excluded by the compiler. Note that if a file in include has a
+  dependency on another file, that file cannot be specified in the exclude property.
+  Thus, the tsconfig.Json file
+  includes all the options to
+  indicate the compiler how to
+  compile a project. Learn
+  more about tsconfig.Json
+  here.
+  https://www.typescriptlang.org/d
+  ocs/handbook/tsconfig-json.html
+  TYPESCRIPT - BUILD TOOLS
+  Build tools are utilities that help automate the transformation and bundling of your code into a single file. Most
+  javascript projects use these build tools to automate the build process.
+  There are several common build tools available that can be integrated with typescript. We will take a look at
+  how to integrate typescript with some of these tools:
+  • Browserify
+  • Grunt
+  • Gulp
+  • Webpack
+  Browserify
+  npm install tsify
+  browserify main.ts -p [ tsify --noImplicitAny ] > bundle.js
+  Grunt
+  npm install grunt-ts
+  You will need to include the grunt config file:
+  Gulp
+  npm install gulp-typescript
+  You will need to include the gulp config file:
+  Webpack
+  npm install ts-loader --save-dev
+  npm install awesome-typescript-loader
+  OR
+  You will need to include the webpack.Config.Js config file:
+  Prasad
+
+class ==> 4 Type Assertion
+
+class ==> 5 Generics 
+
+  Decorators: always we use @ before a decorator.  
+  >npm install -g @angular/cli
+
+  >ng v
+  >ng new <app_name> --standalone = false
+  >ng serve 
+    or
+  >ng serve --o
+
+class ==> 6  
+  File & Folder structure
+  .ts
+  .spec.ts
+  .html
+  .css
+  Git is an application which needs to be download and install, which is used to track version.. it is a version control system
+  https://git-scm.com/downloads
+  windows>64-bit
+  after installing check git -v
+  "https://github.com/prasad-bigdp/angular-11"
+  Github is just a online code storage like gdrive. u can also use bitbucket,gitlab,aws.
+
+  step1:  download git from https://git-scm.com/downloads and install it and check the version by "git -v" in cmd
+  step2: create github account
+  step3: go to visual studio code and login into github
+  step4: setup configs in vscode
+  git config --global user.email "youremail" 
+  git config --global user.name "username" 
+
+  steps:
+  1. git init
+  2. git add .
+  3. git commit -m "update"
+  4. git remote add origin "link"
+  5. git push -u origin main
+
+class ==> 7
+
+
+class ==> 8
+
+
+class ==> 9
+
+
+class ==> 10
+
+
+class ==> 11
+
+
+class ==> 12
+
+
+class ==> 13
+
+
+class ==> 14
+
+
+class ==> 15
+
+
+class ==> 16
+
+
+class ==> 17
+
+
+class ==> 18
+
+
+class ==> 19
+
+
+class ==> 20
+
+
+class ==> 21
+
+
+class ==> 22
+
+
+class ==> 23
+
+
+class ==> 24
+
+
+class ==> 25
+
+
+class ==> 26
+
